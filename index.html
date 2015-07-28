@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang='en' ng-app="MyTodoList">
+<html lang='en' ng-app="todoList">
 <head>
   <title>TO-DO LIST</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src ="js/app.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/todoListController.js"></script>
 </head>
 
 
-<body>
+<body ng-controller="todoListController as ctrl">
   <section>
-    <h1>stuff to do:</h1>
-    <ul>
-       <li>Thing to do 1</li>
-       <li>Thing to do 2</li>
-       <li>Thing to do 3</li>
+    <h1>Here's what you need to do:</h1>
+    <ul class="list-group" ng-repeat="item in ctrl.listTasks track by $index">
+       <li>{{item}}</li>
     </ul>
   </section>
 
   <div>
     <form class="form-horizontal">
-      <input type="text">
-      <button class="btn">Enter To-do</button>
+      <input type="text" ng-model="ctrl.items">
+      <button class="btn" ng-click="ctrl.addItem()">Enter To-do</button>
     </form>
   </div>
 
