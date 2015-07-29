@@ -12,15 +12,15 @@ describe('todoListController', function() {
     expect(ctrl.listTasks).toEqual([]);
   });
 
-  describe('Adding items', function(){
+  describe('Adding tasks: ', function(){
 
-    it('List displays 1 item', function(){
+    it('List displays 1 task', function(){
       ctrl.items = "Make todo list"
       ctrl.addItem();
       expect(ctrl.listTasks).toEqual(["Make todo list"]);
     });
 
-    it('List displays multiple items', function(){
+    it('List displays multiple tasks', function(){
       ctrl.items = "Make todo list"
       ctrl.addItem();
       ctrl.items = "Add an item to to-do list"
@@ -29,4 +29,13 @@ describe('todoListController', function() {
     });
   });
 
+  describe('Marking tasks as done: ', function(){
+
+    it('can mark a task as done', function(){
+      ctrl.items = "Make a todo list"
+      ctrl.addItem();
+      ctrl.markTaskDone();
+      expect(ctrl.markTaskDone).toBe(true)
+    });
+  });
 });

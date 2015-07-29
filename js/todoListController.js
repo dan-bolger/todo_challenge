@@ -6,4 +6,8 @@ todoList.controller('todoListController', [function(){
     self.listTasks.push(self.items);
   };
 
+  self.markTaskDone = function(){
+
+  }
+
 }]);

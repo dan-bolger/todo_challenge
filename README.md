@@ -6,6 +6,8 @@ Here's the challenge:
 
 "Build a Todo list as a mini front-end application. You don't have to use a database, the front-end is more important - you can use an appropriate data structure stored somewhere in your JavaScript (this time only!)"
 
+I'm building this in Angular, using Karma for my unit tests and Protractor for my e2e tests.
+
 ## Core user stories:
 
 ```
