@@ -14,10 +14,10 @@ describe('todoListController', function() {
 
   describe('Adding tasks: ', function(){
 
-    it('List displays 1 task', function(){
+    it('Can add 1 task which defaults to not done', function(){
       ctrl.items = "Make todo list"
       ctrl.addItem();
-      expect(ctrl.listTasks).toEqual[ Object({ name: 'Make todo list', taskdone: false }) ]
+      expect(ctrl.listTasks).toEqual([{'name': 'Make todo list', 'taskDone': false}]);
     });
 
     it('List displays multiple tasks', function(){
@@ -25,16 +25,18 @@ describe('todoListController', function() {
       ctrl.addItem();
       ctrl.items = "Add an item to to-do list"
       ctrl.addItem();
-      expect(ctrl.listTasks).toEqual[ Object({ name: 'Make todo list'},{ name: 'Add an item to to-do list'}) ]
+      expect(ctrl.listTasks).toEqual([{name: 'Make todo list', 'taskDone': false},{ 'name': 'Add an item to to-do list', 'taskDone': false} ])
     });
   });
 
   describe('Marking tasks as done: ', function(){
 
-    it('is automatically not done when created', function(){
+
+    it('can mark items as done', function(){
       ctrl.items = "Make a todo list"
       ctrl.addItem();
-      expect(ctrl.listTasks).toEqual[Object({taskdone: false})]
+      ctrl.markDone();
+      expect(ctrl.listTasks).toEqual[{'taskDone': false}]
     });
   });
 });
