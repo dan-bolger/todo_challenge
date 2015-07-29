@@ -3,11 +3,7 @@ todoList.controller('todoListController', [function(){
   self.listTasks = [];
 
   self.addItem = function(){
-    self.listTasks.push(self.items);
+    self.listTasks.push({'name': self.items, 'taskDone': false});
   };
-
-  self.markTaskDone = function(){
-
-  }
 
 }]);
