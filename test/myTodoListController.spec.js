@@ -36,7 +36,7 @@ describe('todoListController', function() {
       ctrl.items = "Make a todo list"
       ctrl.addItem();
       ctrl.markDone();
-      expect(ctrl.listTasks).toEqual[{'taskDone': false}]
+      expect(ctrl.listTasks).toEqual([{name: 'Make todo list', 'taskDone': true}])
     });
   });
 });
