@@ -40,13 +40,12 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-## APPROACH:
+## Approach:
 
 I first specced out the html with the basic shape of my page. Initially things will be very simple. Tackling the first listed user story first (adding a task), followed (quite naturally) by the ability to mark them as 'done', as required in the third story. Instant updating of the todo (editing entries, as in the third user story) will follow, and we're sitting pretty with our MVP. And then onto the next stories!!
 
-### HOW TO RUN:
 
-Setting up
+### Setting up
 
 ```
 npm update

@@ -5,11 +5,10 @@ todoList.controller('todoListController', [function(){
 
   self.addItem = function(){
     self.listTasks.push({'name': self.items, 'taskDone': false});
-    console.log(self.listTasks);
   };
 
   self.markDone = function(){
-    console.log("well this at least shows");
+    console.log("here is my console.log");
   };
 
 }]);
