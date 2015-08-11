@@ -7,8 +7,9 @@ todoList.controller('todoListController', [function(){
     self.listTasks.push({'name': self.items, 'taskDone': false});
   };
 
-  self.markDone = function(){
-    console.log("here is my console.log");
+  self.markDone = function(item){
+
+    item.taskDone = true;
   };
 
 }]);
