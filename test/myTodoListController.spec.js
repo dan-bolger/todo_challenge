@@ -31,12 +31,11 @@ describe('todoListController', function() {
 
   describe('Marking tasks as done: ', function(){
 
-
     it('can mark items as done', function(){
       ctrl.items = "Make a todo list"
       ctrl.addItem();
-      ctrl.markDone();
-      expect(ctrl.listTasks).toEqual([{name: 'Make todo list', 'taskDone': true}])
+      ctrl.markDone(ctrl.listTasks[0]);
+      expect(ctrl.listTasks[0].taskDone).toEqual(true)
     });
   });
 });

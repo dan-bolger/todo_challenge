@@ -8,8 +8,8 @@ todoList.controller('todoListController', [function(){
   };
 
   self.markDone = function(item){
-
     item.taskDone = true;
+    console.log(item.taskDone)
   };
 
 }]);
