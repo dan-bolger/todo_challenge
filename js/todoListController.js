@@ -12,7 +12,7 @@ todoList.controller('todoListController', [function(){
   };
 
   self.changeItem = function(item){
-    item.name = 'Make a todo list using Angular'
+    item.task = 'Make a todo list using Angular';
   };
 
 }]);

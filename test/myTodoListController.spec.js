@@ -41,7 +41,7 @@ describe('todoListController', function() {
 
     it('can change the text of the task', function(){
       ctrl.addItem("Make a todo list");
-      ctrl.changeItem("Make a todo list using Angular");
+      ctrl.changeItem(ctrl.listTasks[0]);
       expect(ctrl.listTasks[0].task).toEqual("Make a todo list using Angular")
     });
   });
