@@ -1,6 +1,11 @@
-.grey {
-    color: #CCCCCC;
+body {
+  text-align: center;
 }
+
+.grey {
+  color: #CCCCCC;
+}
+
 .black {
-    color: black;
+  color: black;
 }

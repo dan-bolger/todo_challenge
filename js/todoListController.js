@@ -4,12 +4,15 @@ todoList.controller('todoListController', [function(){
 
 
   self.addItem = function(){
-    self.listTasks.push({'name': self.items, 'taskDone': false});
+    self.listTasks.push({'task': self.items, 'taskDone': false});
   };
 
   self.markDone = function(item){
     item.taskDone = true;
-    console.log(item.taskDone)
+  };
+
+  self.changeItem = function(item){
+    item.name = 'Make a todo list using Angular'
   };
 
 }]);

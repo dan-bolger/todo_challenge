@@ -17,7 +17,7 @@ describe('todoListController', function() {
     it('Can add 1 task which defaults to not done', function(){
       ctrl.items = "Make todo list"
       ctrl.addItem();
-      expect(ctrl.listTasks).toEqual([{'name': 'Make todo list', 'taskDone': false}]);
+      expect(ctrl.listTasks).toEqual([{'task': 'Make todo list', 'taskDone': false}]);
     });
 
     it('List displays multiple tasks', function(){
@@ -25,17 +25,24 @@ describe('todoListController', function() {
       ctrl.addItem();
       ctrl.items = "Add an item to to-do list"
       ctrl.addItem();
-      expect(ctrl.listTasks).toEqual([{name: 'Make todo list', 'taskDone': false},{ 'name': 'Add an item to to-do list', 'taskDone': false} ])
+      expect(ctrl.listTasks).toEqual([{'task': 'Make todo list', 'taskDone': false},{ 'task': 'Add an item to to-do list', 'taskDone': false} ])
     });
   });
 
   describe('Marking tasks as done: ', function(){
-
     it('can mark items as done', function(){
-      ctrl.items = "Make a todo list"
-      ctrl.addItem();
+      ctrl.addItem("Make a todo list");
       ctrl.markDone(ctrl.listTasks[0]);
       expect(ctrl.listTasks[0].taskDone).toEqual(true)
+    });
+  });
+
+  describe('editing tasks:', function(){
+
+    it('can change the text of the task', function(){
+      ctrl.addItem("Make a todo list");
+      ctrl.changeItem("Make a todo list using Angular");
+      expect(ctrl.listTasks[0].task).toEqual("Make a todo list using Angular")
     });
   });
 

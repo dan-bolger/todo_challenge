@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang='en' ng-app="todoList">
-<link rel="stylesheet" type="text/css" href="style.css">
+
 
 <head>
   <title>TO-DO LIST</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -18,7 +19,7 @@
   <section>
     <h1>Here's what you need to do:</h1>
     <ul class="list-group" ng-repeat="item in ctrl.listTasks track by $index">
-       <li><span ng-class="{black: item.taskDone == false, grey: item.taskDone == true}">{{item.name}}</span>  <button ng-click="ctrl.markDone(item)">x</li>
+       <li><span ng-class="{black: item.taskDone == false, grey: item.taskDone == true}">{{item.task}}</span>  <button ng-click="ctrl.markDone(item)">x</li>
     </ul>
   </section>
 
